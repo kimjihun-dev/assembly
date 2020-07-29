@@ -5,6 +5,6 @@
 #### 기간 : 2day
 #### 사용언어 : HTML5, CSS3, jQuery, js
 #### 사용툴 : Photoshop, Figma, Zeplin, vscode
-#### demo site : 
+#### demo site : https://kimjihun-dev.github.io/assembly/
 <br>
 <img src="https://github.com/kimjihun-dev/assembly/blob/master/final.jpg" width="100%">
