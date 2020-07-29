@@ -6,4 +6,5 @@
 #### 사용언어 : HTML5, CSS3, jQuery, js
 #### 사용툴 : Photoshop, Figma, Zeplin, vscode
 #### demo site : 
-
+<br>
+<img src="https://github.com/kimjihun-dev/assembly/blob/master/final.jpg" width="100%">
