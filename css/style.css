@@ -1,0 +1,535 @@
+@import url('reset.css');
+
+* { box-sizing: border-box; }
+
+.normal	{ font-weight: 400 }
+.bold	{ font-weight: 700 }
+.bolder	{ font-weight: 800 }
+.light	{ font-weight: 300 }
+
+.container {
+    width: 90%;
+    max-width: 1160px;
+    margin: 0 auto;
+    /* border: 1px solid red; */
+}
+
+.cfixed:after,
+.container:after {
+    display: block;
+    content: "";
+    clear: both;
+}
+
+/* header */
+.top_menu { display: flex; justify-content: flex-end; padding-top: 37px; }
+.top_menu li { display: inline-block; }
+.top_menu li:nth-child(1)::after,
+.top_menu li:nth-child(2)::after,
+.top_menu li:nth-child(3)::after { display: inline-block; content: ""; width: 1px; height: 12px; background-color: #b9b9b9; margin: 0  5px; }
+.top_menu li a { font-size: 13px; color: #7b7b7b; }
+
+.gnb { margin-top: 7px; display: flex; flex-direction: column; align-items: center; }
+.gnb h1 { text-indent: -9999px; }
+.gnb h1 a { display: block; width: 188px; height: 38px; background: url('../images/logo.png') no-repeat; }
+.gnb nav { margin: 45px 0 23px 0; }
+.gnb nav ul li { display: inline-block; margin-right: 71px; }
+.gnb nav ul li:nth-child(6) { margin-right: 0px; }
+.gnb nav ul li a { font-size: 18px; color: #000b23; font-weight: bold; }
+
+.menu-toggle-btn { display: none; }
+
+/* slider */
+.slider-inner { height: 654px; position: relative; }
+.slider { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    max-width: 100%; 
+    width: 100%; 
+    background: url('../images/slider.png');  
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+.slider h1 { font-size: 64px; color: #fff; font-weight: bold; }
+.slider .box { position: relative; margin-top: 11px; width: 661px; height: 70px; background-color: #2651c1; padding-top: 10px; border-radius: 10px; }
+.slider .box input { width: 632px; height: 50px;  border-radius: 10px; }
+.box button { position: absolute; top: 19px; right: 30px; text-indent: -9999px; border: none; background: transparent; display: block; content: ""; width: 35px; height: 32px; background: url('../images/search.png') no-repeat; }
+
+/* contents */
+.contents { margin-top: 9px; }
+.contents_inner { display: flex; }
+.leftBlock { width: 70%; margin-right: 11px; }
+.rightBlock { width: 30%; }
+
+    /* 국회의원검색~ 문화행사*/
+.contents_menu { display: flex; justify-content: space-between; padding-right: 24px; margin-bottom: 43px; }
+.contents_menu div { padding-top: 24px; text-align: center; }
+.contents_menu div a img { margin-bottom: 20px; }
+.contents_menu div a h4 { font-size: 17px; color: #111111; font-weight: bold; margin-bottom: 16px; }
+.contents_menu div a span { display: block; content: ""; width: 26px; height: 1px; background-color: #484848; margin: 0 auto; margin-bottom: 26px; }
+.contents_menu div a p { font-size: 14px; color: #393939; }
+
+.contents_menu div:nth-child(1) a img { margin-bottom: 30px; }
+.contents_menu div:nth-child(3) a img { margin-bottom: 0px; margin-bottom: 17px; }
+.contents_menu div:nth-child(4) a img { margin-bottom: 27px; }
+.contents_menu div:nth-child(5) a img { margin-bottom: 23px; }
+
+    /* 표결정보 */
+.conference { display: flex; padding: 30px 0 0 23px; margin-bottom: 14px; border: 1px solid #dadada; }
+.conf_list { width: 60%;  }
+.conf_list .title { display: flex; justify-content: space-between; padding: 0 0 17px 0; margin-bottom: 29px; width: 444px; border-bottom: 1px solid #dbdbdb; }
+.conf_list .title h4 { font-size: 18px; color: #0c0c0c; }
+.conf_list .title button { width: 54px; height: 25px; font-size: 12px; color: #000; border: none; border: 1px solid #bfbfbf; background-color: transparent; }
+
+.list table { width: 100%; }
+.list table tr:nth-child(1) td:nth-child(1) p { background-color: #2651c1; }
+.list table tr:nth-child(1) td:nth-child(2) span { color: #000000;  }
+.list table tr:nth-child(1) td:nth-child(3) span { color: #000000; }
+.list table tr td:nth-child(1) p { width: 82px; height: 32px; background-color: #A7ABB5; border-radius: 5px; color: #fff; font-weight: bold; text-align: center; line-height: 32px; margin-bottom: 4px; }
+.list table tr td span { color: #898989; }
+
+.conf_graph { padding-top: 70px; width: 40%; text-align: center; position: relative; }
+.conf_graph .graph-title { position: absolute; top: 30px; right: 24px; }
+.graph-title span { display: block; }
+.conf_graph div { padding-bottom: 20px; }
+.conf_graph div img { margin-bottom: 24px; }
+.conf_graph div ul li { display: inline-block; margin-right: 22px; }
+.conf_graph div ul li:nth-child(3) { margin-right: 0px; }
+.conf_graph div ul p span { margin-left: 25px; margin-bottom: 8px; display: block; width: 16px; height: 16px; border-radius: 50%; background-color: #35aa35; }
+.conf_graph div ul li:nth-child(1) p span { margin-left: 28px; }
+.conf_graph div ul li:nth-child(2) p span { margin-left: 20px; background-color: #ff5c5c }
+.conf_graph div ul li:nth-child(3) p span { margin-left: 15px; background-color: #f9ffb2 }
+
+
+/* 법률처리현황 */
+.legal_status { height: 85px; background-color: #5b9bc7; width: 100%; display: flex; justify-content: space-between; align-items: center; }
+.legal_status { display: flex; }
+.legal_status .st01 { width: 40%; text-align: center; }
+.st01 p { font-size: 18px; font-weight: bold; color: #fff; margin-bottom: 10px; }
+.st01 span { font-size: 14px; color: #fff; width: 117px; height: 21px; padding: 5px; border-radius: 5px; background-color: #2651c1; }
+.legal_status .st02 { width: 10%; text-align: center;  }
+.legal_status .st03 { width: 50%; padding-left: 30px; }
+.swiper-slide { font-size: 18px; color: #fff; }
+
+
+
+/* 국민동의청원&배너&의장 */
+.rightBlock { display: flex; flex-direction: column; }
+.agree { position: relative; padding: 27px 0 0 18px; height: 134px; background-color: #2651c1; }
+.agree h5 { font-size: 18px; font-weight: bold; color: #fff; margin-bottom: 10px; }
+.agree span { font-size: 14px; color: #fff; line-height: 22px; }
+.agree a { position: absolute; right: 17px; bottom: 16px;}
+.agree a::before { display: block; content: ""; width: 60px; height: 60px; background: url('../images/agree_icon.png') no-repeat; }
+.banner {height: 235px; margin: 6px 0; border: 1px solid #dadada; }
+.banner img { max-width: 100%; width: 100%; height: 100%; }
+
+.chairman { height: 303px; border: 1px solid #dadada; padding: 24px 22px 0 18px; text-align: center; }
+.chair_title { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
+.chair_title h2 { font-size: 18px; font-weight: bold; }
+.chair_title button { width: 54px; height: 25px; font-size: 12px; color: #000; border: none; border: 1px solid #bfbfbf; background-color: transparent; }
+.chairman a img { margin-bottom: 17px; max-width: 100%; width: 100%; }
+.chairman a p { font-size: 14px; color: #2d2d2d; }
+
+
+/* sns&board */
+.sns_board { margin-top: 15px;  }
+.snsBoard_inner { display: flex; }
+.sns { background-color: #f7f7f7; border: 1px solid #dadada; width: 40%; height: 307px; margin-right: 10px; }
+
+.tabs { padding-top: 28px; text-align: center; }
+.tabs li { display: inline-block; margin-right: 7px; }
+.tabs li:nth-child(3) { margin-right: 0px; }
+
+.youtube { width: 100px; height: 40px; border: 1.5px solid #da2926; border-radius: 20px; text-align: center; line-height: 40px; font-size: 15px; font-weight: bold; color: #da2926; cursor: pointer; }
+.youtube::before { display: inline-block; content: ""; width: 28px; height: 21px; background: url('../images/youtube.png') no-repeat; background-size: 100% auto; vertical-align: middle; cursor: pointer; margin-right: 5px; }
+.youtube.current { width: 100px; height: 40px; background-color:#da2926; border-radius: 20px; text-align: center; line-height: 40px; font-size: 15px; font-weight: bold; color: #fff; }
+.youtube.current::before { display: inline-block; content: ""; width: 28px; height: 21px; background: url('../images/youtube_click.png') no-repeat; background-size: 100% auto; vertical-align: middle; ; }
+.facebook { width: 100px; height: 40px; border: 1.5px solid #4066af; border-radius: 20px; text-align: center; line-height: 40px; font-size: 15px; font-weight: bold; color: #4066af; cursor: pointer; }
+.facebook::before { display: inline-block; content: ""; width: 14px; height: 22px; background: url('../images/facebook.png') no-repeat; background-size: 100% auto; vertical-align: middle; cursor: pointer; margin-right: 5px; }
+.facebook.current { width: 100px; height: 40px; background-color:#4066af; border-radius: 20px; text-align: center; line-height: 40px; font-size: 15px; font-weight: bold; color: #fff; }
+.facebook.current::before { display: inline-block; content: ""; width: 14px; height: 22px; background: url('../images/face_white.png') no-repeat; background-size: 100% auto; vertical-align: middle; ; }
+.twitter { width: 100px; height: 40px; border: 1.5px solid #0e70eb; border-radius: 20px; text-align: center; line-height: 40px; font-size: 15px; font-weight: bold; color: #0e70eb; cursor: pointer; }
+.twitter::before { display: inline-block; content: ""; width: 21px; height: 20px; background: url('../images/twitter.png') no-repeat; background-size: 100% auto; vertical-align: middle; cursor: pointer; margin-right: 5px; }
+.twitter.current { width: 100px; height: 40px; background-color:#0e70eb; border-radius: 20px; text-align: center; line-height: 40px; font-size: 15px; font-weight: bold; color: #fff; }
+.twitter.current::before { display: inline-block; content: ""; width: 21px; height: 20px; background: url('../images/twitter_white.png') no-repeat; background-size: 100% auto; vertical-align: middle; ; }
+.tab-content { display: none; }
+.tab-content.current{ display: inherit; }
+
+.y-content { margin-top: 28px; }
+.y01 { float: left; margin: 0 28px 0 22px; }
+.y01 img+span, .y02 img+span { display: block; }
+.y01 span, .y02 span { font-size: 14px; color: #666666; }
+.y01 img, .y02 img { margin-bottom: 9px; }
+
+.board { padding: 36px 42px 0 33px; width: 60%; height: 307px; border: 1px solid #dadada; }
+.board-title { border-bottom: 1px solid #dadada; margin-bottom: 25px; padding-bottom: 24px; position: relative; }
+.board-title ul li { display: inline-block; margin-left: 60px; }
+.board-title ul li:nth-child(1) { margin-left: 0px; }
+.board-title ul li:nth-child(1) a { font-weight: bold; color: #2651c1; }
+.board-title ul li:nth-child(1)::after { position: absolute; display: block; content: ""; width: 60px; height: 2px; background-color: #2651c1; bottom: 0; }
+.board-title ul li a { font-size: 16px; color: #000; }
+.board table { width: 100%; }
+.board table tr td:nth-child(1) { font-size: 15px; color: #333; padding-bottom: 10px; cursor: pointer; }
+
+/* banner */
+.family-site { margin-top: 43px;  }
+.family-site ul { display: flex; justify-content: space-between; padding: 0 100px; }
+.family-site ul li { display: inline-block; text-indent: -9999px; }
+.family-site ul li:nth-child(1) a { display: block; width: 138px; height: 40px; background: url('../images/samu.png') no-repeat; }
+.family-site ul li:nth-child(2) a { display: block; width: 138px; height: 40px; background: url('../images/library.png') no-repeat; }
+.family-site ul li:nth-child(3) a { display: block; width: 144px; height: 38px; background: url('../images/budget.png') no-repeat; }
+.family-site ul li:nth-child(4) a { display: block; width: 141px; height: 36px; background: url('../images/lawmaking.png') no-repeat; }
+.family-site ul li:nth-child(5) a { display: block; width: 109px; height: 31px; background: url('../images/researcher.png') no-repeat; }
+
+/* footer */
+.footer { margin-top: 50px; }
+.fNav {background-color: #efefef; height: 55px; padding-left: 22px; }
+.fNav ul li { float: left; }
+.fNav ul li:nth-child(1)::after,
+.fNav ul li:nth-child(2)::after,
+.fNav ul li:nth-child(3)::after { display: inline-block; content: ""; width: 2px; height: 12px; background-color: #d0d0d0; margin: 0 15px; } 
+.fNav ul li:nth-child(1) a { color: #2651c1; font-weight: bold; }
+.fNav ul li a { line-height: 55px; font-size: 16px; color: #666666; }
+
+.fBody { margin: 29px 0; }
+.fBody ul li { font-size: 15px; color: #666666; line-height: 23px; }
+.fBody ul li:nth-child(2) { font-size: 14px; }
+
+@media screen and (min-width: 801px) and (max-width: 1279px) {
+
+    /* 표결정보 */
+    .conference { display: flex; flex-direction: column; }
+    .conf_list { width: 100%; }
+    .conf_graph {width: 100%; }
+
+    .board-title ul li { display: inline-block; margin-left: 20px; }
+    .board table tr td:nth-child(2) { display: none; }
+
+    .family-site ul { display: flex; justify-content: space-between; padding: 0 50px; }
+}
+
+@media screen and (min-width:640px) and (max-width:800px){
+
+    /* 헤더영역 */
+    .gnb { display: flex; flex-direction: row; }
+
+    .top_menu { display: none; }
+    .gnb h1 { margin: 20px 0; }
+    .gnb nav { display: none; }
+
+    .menu-toggle-btn { 
+        position: absolute;
+        right: 25px;
+        top: 45px;
+        display: block;
+        width: 25px;
+        cursor: pointer;
+    }
+    
+    .menu-toggle-btn span{ display:block; width:100%; height:2px; background:#2651c1; }
+    .menu-toggle-btn span:nth-child(2){ margin:5px 0; }
+
+    /* 주요컨텐츠 */
+    .contents_inner { width: 100%; display: flex; flex-direction: column; }
+    .leftBlock { width: 100%; }
+    .rightBlock { width: 100%; }
+    
+    /* sns&board */
+    .snsBoard_inner { width: 100%; display: flex; flex-direction: column; }
+    .sns { width: 100%; }
+    .board { width: 100%; }
+
+    /* 표결정보 */
+    .conference { display: flex; flex-direction: column; }
+    .conf_list { width: 100%; }
+    .conf_graph {width: 100%; }
+
+    .conf_list .title { width: 95%; }
+
+    /* 국민동의청원&배너&의장 */
+    .rightBlock { display: flex; flex-direction: row; justify-content: space-between;  }
+    .agree { width: 33%; height: 235px; }
+    .banner { width: 33%; margin: 0; height: 235px; }
+    .chairman { width: 33%; height: 235px; }
+    .chairman a p { font-size: 12px;  }
+    .legal_status { margin-bottom: 20px; }
+
+    .board { margin-top: 10px; }
+    .board-title ul li { display: inline-block; margin-left: 50px; }
+    .board table tr td:nth-child(2) { display: none; }
+
+    .family-site ul { display: flex; padding: 0; }
+
+    /* footer */
+    .footer { margin-top: 50px; }
+    .footer_inner { width: 100%; }
+    .fNav { background-color: #efefef; height: 55px; padding:0px; }
+    .fNav ul { display: flex; justify-content: center;  }
+    .fNav ul li { float: none; margin-left: 10px; }
+    .fNav ul li:nth-child(1) { margin-left: 0px; }
+    .fNav ul li:nth-child(1)::after,
+    .fNav ul li:nth-child(2)::after,
+    .fNav ul li:nth-child(3)::after { display: none; } 
+    .fNav ul li:nth-child(1) a { color: #2651c1; font-weight: bold; }
+    .fNav ul li a { line-height: 55px; font-size: 14px; color: #666666; }
+
+    .fBody { margin: 0; padding: 20px 0; background-color: #3c4353; }
+    .fBody ul { text-align: center; }
+    .fBody ul li { font-size: 14px; color: #fff; line-height: 23px; }
+    .fBody ul li:nth-child(2) { font-size: 10px; }
+}
+
+@media screen and (min-width:480px) and (max-width:639px){ 
+
+    /* 헤더영역 */
+    .gnb { display: flex; flex-direction: row; }
+
+    .top_menu { display: none; }
+    .gnb h1 { margin: 20px 0; }
+    .gnb nav { display: none; }
+
+    .menu-toggle-btn { 
+        position: absolute;
+        right: 25px;
+        top: 45px;
+        display: block;
+        width: 25px;
+        cursor: pointer;
+    }
+    
+    .menu-toggle-btn span{
+        display:block;
+        width:100%;
+        height:2px;
+        background:#2651c1;
+    }
+    
+    .menu-toggle-btn span:nth-child(2){
+        margin:5px 0;
+    }
+
+    .slider h1 { font-size: 52px;  }
+    .slider .box { position: relative; margin-top: 11px; width: 90%; height: 70px; background-color: #2651c1; padding-top: 10px;  }
+    .slider .box input { width: 95%; height: 50px;  border-radius: 10px; }
+
+
+    /* 주요컨텐츠 */
+    .contents_inner { width: 100%; display: flex; flex-direction: column; }
+    .leftBlock { float: none; width: 100%; }
+    .rightBlock { float: none; width: 100%; }
+
+    /* 국회의원검색~ 문화행사*/
+    .contents_menu { display: flex; flex-direction: column; padding: 0; margin-bottom: 43px; padding: 20px 20px 0 20px; }
+    .contents_menu div { padding: 0px; text-align: left; border-bottom: 1px solid #dadada; padding-top: 20px; }
+    .contents_menu div a img { margin: 0px; float: left; margin-right: 20px; }
+    .contents_menu div a h4 { font-size: 17px; color: #111111; font-weight: bold; margin: 0px; margin-bottom: 10px; }
+    .contents_menu div a span { display: none; margin: 0; }
+    .contents_menu div a p { font-size: 14px; color: #393939; }
+
+    .contents_menu div img { margin-bottom: 0px; }
+
+    .contents_menu div:nth-child(2) { padding-bottom: 20px; }
+    
+    /* sns&board */
+    .snsBoard_inner { width: 100%; display: flex; flex-direction: column; }
+    .sns { float: none; width: 100%; }
+    .board { float: none; width: 100%; }
+
+    /* 표결정보 */
+    .conference { display: flex; flex-direction: column; }
+    .conf_list { width: 100%; }
+    .conf_graph {width: 100%; }    
+
+    .conf_list .title { width: 95%; }
+
+   /* 국민동의청원&배너&의장 */
+    .rightBlock { display: flex; flex-direction: column;  }
+    .agree { width: 100%;  }
+    .banner { width: 100%;  }
+    .chairman { width: 100%;  }
+
+    .chairman { height: 473px;  }
+
+    .legal_status { margin-bottom: 20px; }
+
+    .board { margin-top: 10px; }
+    .board-title ul li { display: inline-block; margin-left: 30px; }
+    .board table tr td:nth-child(2) { display: none; }
+
+    .family-site { display: none; }
+
+        /* footer */
+    .footer { margin-top: 50px; }
+    .footer_inner { width: 100%; }
+    .fNav { background-color: #efefef; height: 55px; padding:0px; }
+    .fNav ul { display: flex; justify-content: center;  }
+    .fNav ul li { float: none; margin-left: 10px; }
+    .fNav ul li:nth-child(1) { margin-left: 0px; }
+    .fNav ul li:nth-child(1)::after,
+    .fNav ul li:nth-child(2)::after,
+    .fNav ul li:nth-child(3)::after { display: none; } 
+    .fNav ul li:nth-child(1) a { color: #2651c1; font-weight: bold; }
+    .fNav ul li a { line-height: 55px; font-size: 14px; color: #666666; }
+
+    .fBody { margin: 0; padding: 20px 0; background-color: #3c4353; }
+    .fBody ul { text-align: center; }
+    .fBody ul li { font-size: 14px; color: #fff; line-height: 23px; }
+    .fBody ul li:nth-child(2) { font-size: 10px; }
+
+    
+}
+
+@media screen and (max-width:479px){ 
+
+    /* 헤더영역 */
+    .gnb { display: flex; flex-direction: row; }
+    .top_menu { display: none; }
+    .gnb h1 { margin: 20px 0; }
+    .gnb nav { display: none; }
+
+    .menu-toggle-btn { 
+        position: absolute;
+        right: 15px;
+        top: 45px;
+        display: block;
+        width: 25px;
+        cursor: pointer;
+    }
+    
+    .menu-toggle-btn span{
+        display:block;
+        width:100%;
+        height:2px;
+        background:#2651c1;
+    }
+    
+    .menu-toggle-btn span:nth-child(2){
+        margin:5px 0;
+    }
+
+    .slider h1 { font-size: 35px;  }
+    .slider .box { position: relative; margin-top: 11px; width: 90%; height: 70px; background-color: #2651c1; padding-top: 10px;  }
+    .slider .box input { width: 95%; height: 50px;  border-radius: 10px; }
+    .box button { top: 19px; right: 20px;  }
+
+    /* 주요컨텐츠 */
+    .contents_inner { width: 100%; display: flex; flex-direction: column; }
+    .leftBlock { float: none; width: 100%; }
+    .rightBlock { float: none; width: 100%; }
+
+        /* 국회의원검색~ 문화행사*/
+    .contents_menu { display: flex; flex-direction: column; padding: 0; margin-bottom: 43px; padding: 20px 20px 0 20px; }
+    .contents_menu div { padding: 0px; text-align: left; border-bottom: 1px solid #dadada; padding-top: 20px; }
+    .contents_menu div a img { margin: 0px; float: left; margin-right: 20px; }
+    .contents_menu div a h4 { font-size: 17px; color: #111111; font-weight: bold; margin: 0px; margin-bottom: 10px; }
+    .contents_menu div a span { display: none; margin: 0; }
+    .contents_menu div a p { font-size: 14px; color: #393939; }
+
+    .contents_menu div img { margin-bottom: 0px; }
+
+    .contents_menu div:nth-child(2) { padding-bottom: 20px; }
+
+    .chairman { height: 345px;  }
+    
+    /* sns&board */
+    .snsBoard_inner { width: 100%; display: flex; flex-direction: column; }
+    .sns { float: none; width: 100%; }
+    .board { float: none; width: 100%; }
+
+    /* 표결정보 */
+    .conference { display: flex; flex-direction: column; }
+    .conf_list { width: 100%; }
+    .conf_graph {width: 100%; }  
+
+    .conf_list .title { width: 95%; }
+
+    .list table tr td:nth-child(1) p { width: 62px; height: 32px; font-size: 14px; }
+    .list table tr td:nth-child(3) span { display: none; }
+    
+    .board { margin-top: 10px; }
+    .board { padding: 0px; width: 100%; height: 357px; padding: 20px 20px 0 20px;  }
+    .board-title ul li { display: inline-block; margin-left: 15px; }
+    .board-title ul li:nth-child(5) { display: none; }
+    .board table tr td:nth-child(2) { display: none; }
+
+    .family-site { display: none; }
+
+       /* footer */
+    .footer { margin-top: 50px; }
+    .footer_inner { width: 100%; }
+    .fNav { background-color: #efefef; height: 55px; padding:0px; }
+    .fNav ul { display: flex;  }
+    .fNav ul li { float: none; margin-left: 5px; }
+    .fNav ul li:nth-child(1) { margin-left: 0px; }
+    .fNav ul li:nth-child(1)::after,
+    .fNav ul li:nth-child(2)::after,
+    .fNav ul li:nth-child(3)::after,
+    .fNav ul li:nth-child(4)::after { display: none; } 
+    .fNav ul li:nth-child(1) a { color: #2651c1; font-weight: bold; }
+    .fNav ul li a { line-height: 55px; font-size: 14px; color: #666666; }
+
+    .fBody { margin: 0; padding: 20px 0; background-color: #3c4353; }
+    .fBody ul { text-align: center; }
+    .fBody ul li { font-size: 14px; color: #fff; line-height: 23px; }
+    .fBody ul li:nth-child(2) { font-size: 10px; }
+
+}
+
+@media screen and (max-width: 380px) {
+
+    /* 헤더영역 */
+    .top_menu { display: none; }
+    .gnb h1 { margin: 20px 0; }
+    .gnb nav { display: none; }
+
+    .menu-toggle-btn { 
+        position: absolute;
+        right: 15px;
+        top: 45px;
+        display: block;
+        width: 25px;
+        cursor: pointer;
+    }
+    
+    .menu-toggle-btn span{
+        display:block;
+        width:100%;
+        height:2px;
+        background:#2651c1;
+    }
+    
+    .menu-toggle-btn span:nth-child(2){
+        margin:5px 0;
+    }
+
+        /* 국회의원검색~ 문화행사*/
+    .contents_menu { display: flex; flex-direction: column; padding: 0; margin-bottom: 43px; padding: 20px 20px 0 20px; }
+    .contents_menu div { padding: 0px; text-align: left; border-bottom: 1px solid #dadada; padding-top: 20px; }
+    .contents_menu div a img { margin: 0px; float: left; margin-right: 20px; }
+    .contents_menu div a h4 { font-size: 17px; color: #111111; font-weight: bold; margin: 0px; margin-bottom: 10px; }
+    .contents_menu div a span { display: none; margin: 0; }
+    .contents_menu div a p { font-size: 14px; color: #393939; }
+
+    .contents_menu div img { margin-bottom: 0px; }
+
+    .contents_menu div:nth-child(2) { padding-bottom: 20px; }
+
+    .chairman { height: 325px;  }
+
+    .board { margin-top: 10px; }
+    .board { padding: 0px; width: 100%; height: 357px; padding: 20px 20px 0 20px;  }
+    .board-title ul li { display: inline-block; margin-left: 5px; }
+    .board-title ul li:nth-child(5) { display: none; }
+
+    .family-site { display: none; }
+
+    .fBody { margin: 0; padding: 20px 0; background-color: #3c4353; }
+    .fBody ul { text-align: center; }
+    .fBody ul li { font-size: 14px; color: #fff; line-height: 23px; }
+    .fBody ul li:nth-child(2) { font-size: 10px; }
+}
